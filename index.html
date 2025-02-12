@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffebf0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #ff1a4b;
+        }
+        .images img {
+            display: none;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+        #startImage {
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+        .hamster-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .hamster-container img {
+            width: 100px;
+            animation: pop 0.5s ease-in-out;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        #valentineMessage {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff1a4b;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day! 💖</h1>
+        <img id="startImage" src="C:/Users/joell/Downloads/image (1).png" alt="Cute Cat">
+        <button onclick="showAnimation()">Press Here</button>
+        <div class="hamster-container" id="hamsterContainer"></div>
+        <img id="bananaHeart" src="C:/Users/joell/Downloads/image (3).png" alt="Banana Heart" style="display: none;">
+        <div id="valentineMessage">Be My Valentine 💕</div>
+    </div>
+    <script>
+        function showAnimation() {
+            document.getElementById("startImage").style.display = "none";
+            let hamsterContainer = document.getElementById("hamsterContainer");
+            for (let i = 0; i < 5; i++) {
+                let hamster = document.createElement("img");
+                hamster.src = "C:/Users/joell/Downloads/image (2).png";
+                hamster.alt = "Cute Hamster";
+                hamsterContainer.appendChild(hamster);
+            }
+            setTimeout(() => {
+                document.getElementById("bananaHeart").style.display = "block";
+                document.getElementById("valentineMessage").style.display = "block";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
